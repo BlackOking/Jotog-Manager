@@ -77,5 +77,19 @@ namespace Jotog_Manager
             MyForm.BringToFront();
             MyForm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HearthLuriaForm MyForm = new HearthLuriaForm();
+            MyForm.TopLevel = false;
+            MyForm.FormBorderStyle = FormBorderStyle.None;
+            MyForm.Parent = panel1;
+            MyForm.Top = 0;
+            MyForm.Left = 0;
+            MyForm.Size = panel1.ClientSize;
+            MyForm.Dock = DockStyle.Fill;
+            MyForm.BringToFront();
+            MyForm.Show();
+        }
     }
 }

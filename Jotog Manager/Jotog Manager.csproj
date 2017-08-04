@@ -57,6 +57,12 @@
     <Compile Include="EsthonForm.Designer.cs">
       <DependentUpon>EsthonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HearthLuriaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HearthLuriaForm.Designer.cs">
+      <DependentUpon>HearthLuriaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LuriaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EsthonForm.resx">
       <DependentUpon>EsthonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HearthLuriaForm.resx">
+      <DependentUpon>HearthLuriaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LuriaForm.resx">
       <DependentUpon>LuriaForm.cs</DependentUpon>
