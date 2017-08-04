@@ -59,6 +59,7 @@ namespace Jotog_Manager
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             BienvenueForm MyForm = new BienvenueForm();
             MyForm.TopLevel = false;
             MyForm.FormBorderStyle = FormBorderStyle.None;
