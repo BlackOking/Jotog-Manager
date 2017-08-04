@@ -16,7 +16,7 @@ namespace Jotog_Manager
         {
             InitializeComponent();
 
-            if(DateTime.Now.Hour <= 19)
+            if(DateTime.Now.Hour >= 19)
             {
                 this.label1.Text = "Bonsoir " + Environment.UserName + " !";
             }
