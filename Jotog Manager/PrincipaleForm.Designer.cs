@@ -94,7 +94,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Name = "PrincipaleForm";
-            this.Text = "PrincipaleForm";
+            this.Text = "Jotog Manager";
             this.ResumeLayout(false);
 
         }
