@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Jotog_Manager
 {
-    public partial class Form1 : Form
+    public partial class BienvenueForm : Form
     {
-        public Form1()
+        public BienvenueForm()
         {
             InitializeComponent();
         }

@@ -45,14 +45,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BienvenueForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="BienvenueForm.Designer.cs">
+      <DependentUpon>BienvenueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsthonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EsthonForm.Designer.cs">
+      <DependentUpon>EsthonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LuriaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuriaForm.Designer.cs">
+      <DependentUpon>LuriaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipaleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipaleForm.Designer.cs">
+      <DependentUpon>PrincipaleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BienvenueForm.resx">
+      <DependentUpon>BienvenueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsthonForm.resx">
+      <DependentUpon>EsthonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LuriaForm.resx">
+      <DependentUpon>LuriaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrincipaleForm.resx">
+      <DependentUpon>PrincipaleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
