@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,11 @@ namespace Jotog_Manager
 {
     public partial class PrincipaleForm : Form
     {
-
-        new string tableauDeBord = "";
+        private MySqlConnection connexion;
+        private string server;
+        private string database;
+        private string uid;
+        private string passwordsql;
 
         public PrincipaleForm()
         {
@@ -29,13 +33,39 @@ namespace Jotog_Manager
             MyForm.Dock = DockStyle.Fill;
             MyForm.BringToFront();
             MyForm.Show();
+
+            //Vérification du statut du serveur MySQL
+
+            LoginForm lgnfrm = new LoginForm();
+            //lgnfrm.Show();
+
+            server = "localhost";
+            database = "admin";
+            uid = "root";
+            passwordsql = "AlpaguaManager-2017";
+
+            string connString;
+            connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
+
+            connexion = new MySqlConnection(connString);
+
+            try
+            {
+                connexion.Open();
+                toolStripStatusLabel1.Text = "Connecté";
+                toolStripStatusLabel1.ForeColor = Color.Green;
+            }
+            catch
+            {
+                toolStripStatusLabel1.Text = "Non connecté";
+                toolStripStatusLabel1.ForeColor = Color.Red;
+            }
         }
 
         //Click sur le bouton "Projet Esthon"
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tableauDeBord = "Esthon";
 
             EsthonForm MyForm = new EsthonForm();
             MyForm.TopLevel = false;
@@ -69,7 +99,6 @@ namespace Jotog_Manager
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tableauDeBord = "Luria";
 
             LuriaForm MyForm = new LuriaForm();
             MyForm.TopLevel = false;
