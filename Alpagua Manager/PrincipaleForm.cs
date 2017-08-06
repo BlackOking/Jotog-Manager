@@ -23,6 +23,9 @@ namespace Jotog_Manager
         {
             InitializeComponent();
 
+            tlabelAlphaAvertVersion.Text = "Vous possédez une version Alpha du programme";
+            tlabelAlphaAvertVersion.ForeColor = Color.Red;
+
             BienvenueForm MyForm = new BienvenueForm();
             MyForm.TopLevel = false;
             MyForm.FormBorderStyle = FormBorderStyle.None;

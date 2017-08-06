@@ -37,6 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tlabelAlphaAvertVersion = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -101,11 +102,12 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 562);
+            this.toolStripStatusLabel1,
+            this.tlabelAlphaAvertVersion});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 560);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip1.Size = new System.Drawing.Size(984, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(984, 24);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
@@ -113,8 +115,15 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 19);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // tlabelAlphaAvertVersion
+            // 
+            this.tlabelAlphaAvertVersion.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.tlabelAlphaAvertVersion.Name = "tlabelAlphaAvertVersion";
+            this.tlabelAlphaAvertVersion.Size = new System.Drawing.Size(122, 19);
+            this.tlabelAlphaAvertVersion.Text = "toolStripStatusLabel2";
             // 
             // PrincipaleForm
             // 
@@ -150,5 +159,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel tlabelAlphaAvertVersion;
     }
 }
