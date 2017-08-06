@@ -34,7 +34,6 @@
             this.labelLuriaPublicVersion = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.process1 = new System.Diagnostics.Process();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -101,17 +100,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Public :";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(19, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 52);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Mettre les serveurs en maintenance";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // process1
             // 
             this.process1.StartInfo.Domain = "";
@@ -121,14 +109,12 @@
             this.process1.StartInfo.StandardOutputEncoding = null;
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
-            this.process1.Exited += new System.EventHandler(this.process1_Exited);
             // 
             // LuriaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 497);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "LuriaForm";
@@ -148,7 +134,6 @@
         private System.Windows.Forms.Label labelLuriaPublicVersion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Diagnostics.Process process1;
     }
 }

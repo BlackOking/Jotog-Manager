@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using System.Diagnostics;
 
 namespace Jotog_Manager
 {
@@ -49,14 +49,5 @@ namespace Jotog_Manager
 
         }
 
-        private void process1_Exited(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Les serveurs du jeu sont inexistants. Les commandes de serveur sont donc inutilisable.", "Aucun serveur", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
     }
 }
