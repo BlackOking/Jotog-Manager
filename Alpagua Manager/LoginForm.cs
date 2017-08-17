@@ -43,7 +43,7 @@ namespace Jotog_Manager
             }
             catch
             {
-                MessageBox.Show("Une erreur est survenue lors de la connexion à la base MySQL", "Erreur de connexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Une erreur est survenue lors de la connexion à la base MySQL", "Erreur de connexion au serveur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             InitializeComponent();
@@ -73,20 +73,29 @@ namespace Jotog_Manager
                     if (count == 1)
                     {
                         PrincipaleForm pForm = new PrincipaleForm();
-                        pForm.Show();
+
+                        System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(ouvrirPrincipale));
+                        monthread.Start();
+                        this.Close();
+
                     }
                     else if (count > 1)
                     {
-                        MessageBox.Show("Duplicate Username and password... Accès refusé");
+                        MessageBox.Show("Le nom d'utilisateur et le mot de passe sont dupliqués... Accès refusé. Veuillez contacter l'administrateur de la base.");
                     }
                     else
                     {
-                        MessageBox.Show("Vos identifiants sont incorrects, veuillez réessayer...");
+                        MessageBox.Show("Vos identifiants sont incorrects, veuillez réessayer...", "Echec de l'identification", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         connexion.Close();
                     }
 
                 }
             }
+        }
+
+        public static void ouvrirPrincipale()
+        {
+            Application.Run(new PrincipaleForm());
         }
 
     }

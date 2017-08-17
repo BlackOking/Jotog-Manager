@@ -16,9 +16,7 @@ namespace Jotog_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoginForm lgnform = new LoginForm();
-            lgnform.Show();
-            Application.Run();
+            Application.Run(new LoginForm());
         }
     }
 }
