@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Alpagua_Manager;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,8 @@ namespace Jotog_Manager
 
         public PrincipaleForm()
         {
+            Application.Exit();
+
             InitializeComponent();
 
             tlabelAlphaAvertVersion.Text = "Vous possédez une version Alpha du programme";
@@ -38,9 +41,6 @@ namespace Jotog_Manager
             MyForm.Show();
 
             //Vérification du statut du serveur MySQL
-
-            LoginForm lgnfrm = new LoginForm();
-            //lgnfrm.Show();
 
             server = "localhost";
             database = "admin";
@@ -121,6 +121,20 @@ namespace Jotog_Manager
         {
 
             BienvenueForm MyForm = new BienvenueForm();
+            MyForm.TopLevel = false;
+            MyForm.FormBorderStyle = FormBorderStyle.None;
+            MyForm.Parent = panel1;
+            MyForm.Top = 0;
+            MyForm.Left = 0;
+            MyForm.Size = panel1.ClientSize;
+            MyForm.Dock = DockStyle.Fill;
+            MyForm.BringToFront();
+            MyForm.Show();
+        }
+
+        private void garryButton_Click(object sender, EventArgs e)
+        {
+            GarryForm MyForm = new GarryForm();
             MyForm.TopLevel = false;
             MyForm.FormBorderStyle = FormBorderStyle.None;
             MyForm.Parent = panel1;

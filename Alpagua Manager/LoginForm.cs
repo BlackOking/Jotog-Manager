@@ -16,6 +16,7 @@ namespace Jotog_Manager
 
         private MySqlConnection connexion;
         private string server;
+        private string port;
         private string database;
         private string uid;
         private string passwordsql;
@@ -25,13 +26,14 @@ namespace Jotog_Manager
 
         public LoginForm()
         {
-            server = "localhost";
-            database = "admin";
+            server = "127.0.0.1";
+            port = "3306";
+            database = "manager";
             uid = "root";
             passwordsql = "JotogManager-2017";
 
             string connString;
-            connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
+            connString = $"SERVER={server};PORT={port};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
 
             connexion = new MySqlConnection(connString);
 
@@ -41,7 +43,7 @@ namespace Jotog_Manager
             }
             catch
             {
-                //MessageBox.Show("Une erreur est survenue lors de la connexion à la base MySQL", "Erreur de connexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Une erreur est survenue lors de la connexion à la base MySQL", "Erreur de connexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             InitializeComponent();
@@ -59,36 +61,34 @@ namespace Jotog_Manager
                 {
 
                     connexion.Open();
-                    MySqlCommand SelectCommand = new MySqlCommand("SELECT count(*) from users where Username=@Username and Password=@Password;", connexion);
+                    MySqlCommand SelectCommand = new MySqlCommand("SELECT * from manager.users where Username='" + this.tbUser.Text + "' and Password='" + this.tbPassword.Text +"' ;", connexion);
                     MySqlDataReader users;
-                    SelectCommand.Parameters.AddWithValue("@Username", this.tbUser.Text);
-                    SelectCommand.Parameters.AddWithValue("@Password", this.tbPassword.Text);
-                    cmd.Connection = connexion;
-
-                    string login;
 
                     users = SelectCommand.ExecuteReader();
-
-                    using (users)
+                    int count = 0;
+                    while (users.Read())
                     {
-
-                        if (users.Read() == true)
-                        {
-                            login = "true";
-                            this.Hide();
-                        }
-                        else
-                        {
-                            if (users.Read() == false)
-                            {
-                                login = "false";
-                                MessageBox.Show("Erreur d'authentification");
-                            }
-                        }
+                        count = count + 1;
                     }
+                    if (count == 1)
+                    {
+                        PrincipaleForm pForm = new PrincipaleForm();
+                        pForm.Show();
+                    }
+                    else if (count > 1)
+                    {
+                        MessageBox.Show("Duplicate Username and password... Accès refusé");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vos identifiants sont incorrects, veuillez réessayer...");
+                        connexion.Close();
+                    }
+
                 }
             }
         }
+
     }
 
 }
