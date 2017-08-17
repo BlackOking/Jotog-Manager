@@ -73,11 +73,11 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Myra 4F Caps", 15F);
+            this.button3.Image = global::Alpagua_Manager.Properties.Resources.logo_luria;
             this.button3.Location = new System.Drawing.Point(12, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 50);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Luria";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
