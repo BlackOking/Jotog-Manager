@@ -77,7 +77,6 @@ namespace Jotog_Manager
                         System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(ouvrirPrincipale));
                         monthread.Start();
                         this.Close();
-
                     }
                     else if (count > 1)
                     {
