@@ -26,9 +26,9 @@ namespace Jotog_Manager
             InitializeComponent();
 
             server = "localhost";
-            database = "version";
+            database = "versions";
             uid = "root";
-            passwordsql = "AlpaguaManager-2017";
+            passwordsql = "JotogManager-2017";
 
             string connString;
             connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};";

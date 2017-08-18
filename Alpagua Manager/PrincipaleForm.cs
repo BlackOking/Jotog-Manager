@@ -16,6 +16,7 @@ namespace Jotog_Manager
     {
         private MySqlConnection connexion;
         private string server;
+        private string port;
         private string database;
         private string uid;
         private string passwordsql;
@@ -42,13 +43,14 @@ namespace Jotog_Manager
 
             //Vérification du statut du serveur MySQL
 
-            server = "localhost";
+            server = "127.0.0.1";
+            port = "3306";
             database = "admin";
             uid = "root";
-            passwordsql = "AlpaguaManager-2017";
+            passwordsql = "JotogManager-2017";
 
             string connString;
-            connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
+            connString = $"SERVER={server};PORT={port};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
 
             connexion = new MySqlConnection(connString);
 
