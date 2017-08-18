@@ -63,6 +63,16 @@ namespace Alpagua_Manager.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AlpaguaLogo {
+            get {
+                object obj = ResourceManager.GetObject("AlpaguaLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GarryLogo {
             get {
                 object obj = ResourceManager.GetObject("GarryLogo", resourceCulture);
@@ -73,9 +83,9 @@ namespace Alpagua_Manager.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logo_luria {
+        internal static System.Drawing.Bitmap LuriaLogo {
             get {
-                object obj = ResourceManager.GetObject("logo_luria", resourceCulture);
+                object obj = ResourceManager.GetObject("LuriaLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

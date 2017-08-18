@@ -193,8 +193,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alpagua-icon-ConvertImage.ico" />
-    <None Include="Resources\logo-luria.png" />
-    <None Include="Resources\alpagua-icon.ico" />
+    <None Include="Resources\LuriaLogo.png" />
+    <None Include="Resources\AlpaguaLogo.png" />
     <None Include="Resources\GarryLogo.png" />
   </ItemGroup>
   <ItemGroup />
