@@ -38,6 +38,11 @@ namespace Jotog_Manager
             try
             {
                 connexion.Open();
+
+                labelLuriaPublicVersion.Text = "Texte non configuré";
+                labelLuriaPublicVersion.ForeColor = Color.Orange;
+                labelLuriaDevVersion.Text = "Texte non configuré";
+                labelLuriaDevVersion.ForeColor = Color.Orange;
             }
             catch
             {
