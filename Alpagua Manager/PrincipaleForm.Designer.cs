@@ -60,7 +60,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 68);
+            this.button2.Location = new System.Drawing.Point(12, 180);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 50);
             this.button2.TabIndex = 2;
@@ -108,7 +108,7 @@
             // 
             this.garryButton.Font = new System.Drawing.Font("Mighty Rapids", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.garryButton.Image = ((System.Drawing.Image)(resources.GetObject("garryButton.Image")));
-            this.garryButton.Location = new System.Drawing.Point(12, 180);
+            this.garryButton.Location = new System.Drawing.Point(12, 68);
             this.garryButton.Name = "garryButton";
             this.garryButton.Size = new System.Drawing.Size(150, 50);
             this.garryButton.TabIndex = 7;
