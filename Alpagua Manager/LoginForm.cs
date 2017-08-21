@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Alpagua_Manager;
 
 namespace Jotog_Manager
 {
@@ -54,12 +55,14 @@ namespace Jotog_Manager
             user = tbUser.Text;
             mdp = tbPassword.Text;
 
+            ProgressBarForm pbarform = new ProgressBarForm();
+            pbarform.Show();
+
             using (connexion = new MySqlConnection($"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};"))
             {
 
                 using (MySqlCommand cmd = new MySqlCommand("", connexion))
                 {
-
                     connexion.Open();
                     MySqlCommand SelectCommand = new MySqlCommand("SELECT * from users where Username='" + this.tbUser.Text + "' and Password='" + this.tbPassword.Text +"' ;", connexion);
                     MySqlDataReader users;
