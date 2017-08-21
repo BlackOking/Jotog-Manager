@@ -26,14 +26,14 @@ namespace Jotog_Manager
 
         public LoginForm()
         {
-            server = "127.0.0.1";
+            server = "mysql-alpagua.alwaysdata.net";
             port = "3306";
-            database = "manager";
-            uid = "root";
+            database = "alpagua_manager";
+            uid = "alpagua";
             passwordsql = "JotogManager-2017";
 
             string connString;
-            connString = $"SERVER={server};PORT={port};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
+            connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
 
             connexion = new MySqlConnection(connString);
 
@@ -61,7 +61,7 @@ namespace Jotog_Manager
                 {
 
                     connexion.Open();
-                    MySqlCommand SelectCommand = new MySqlCommand("SELECT * from manager.users where Username='" + this.tbUser.Text + "' and Password='" + this.tbPassword.Text +"' ;", connexion);
+                    MySqlCommand SelectCommand = new MySqlCommand("SELECT * from users where Username='" + this.tbUser.Text + "' and Password='" + this.tbPassword.Text +"' ;", connexion);
                     MySqlDataReader users;
 
                     users = SelectCommand.ExecuteReader();
