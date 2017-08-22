@@ -36,6 +36,9 @@ namespace Jotog_Manager
 
             connexion = new MySqlConnection(connString);
 
+            ChargementForm pbarform = new ChargementForm();
+            pbarform.Show();
+
             try
             {
                 connexion.Open();

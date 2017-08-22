@@ -16,7 +16,6 @@ namespace Jotog_Manager
     {
         private MySqlConnection connexion;
         private string server;
-        private string port;
         private string database;
         private string uid;
         private string passwordsql;
