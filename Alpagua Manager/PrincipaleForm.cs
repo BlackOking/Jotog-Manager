@@ -26,7 +26,7 @@ namespace Jotog_Manager
 
             InitializeComponent();
 
-            tlabelAlphaAvertVersion.Text = "Vous possédez une version Beta du programme";
+            tlabelAlphaAvertVersion.Text = "Vous possédez une version Beta du programme (0.1.1)";
             tlabelAlphaAvertVersion.ForeColor = Color.Orange;
 
             BienvenueForm MyForm = new BienvenueForm();
