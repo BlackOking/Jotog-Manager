@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Alpagua_Manager
 {
-    public partial class ProgressBarForm : Form
+    public partial class ChargementForm : Form
     {
-        public ProgressBarForm()
+        public ChargementForm()
         {
             InitializeComponent();
         }

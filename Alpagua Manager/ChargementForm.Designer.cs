@@ -1,6 +1,6 @@
 ﻿namespace Alpagua_Manager
 {
-    partial class ProgressBarForm
+    partial class ChargementForm
     {
         /// <summary>
         /// Required designer variable.

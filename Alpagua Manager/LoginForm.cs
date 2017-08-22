@@ -17,7 +17,6 @@ namespace Jotog_Manager
 
         private MySqlConnection connexion;
         private string server;
-        private string port;
         private string database;
         private string uid;
         private string passwordsql;
@@ -28,7 +27,6 @@ namespace Jotog_Manager
         public LoginForm()
         {
             server = "mysql-alpagua.alwaysdata.net";
-            port = "3306";
             database = "alpagua_manager";
             uid = "alpagua";
             passwordsql = "JotogManager-2017";
@@ -52,45 +50,52 @@ namespace Jotog_Manager
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            user = tbUser.Text;
-            mdp = tbPassword.Text;
 
-            ProgressBarForm pbarform = new ProgressBarForm();
-            pbarform.Show();
-
-            using (connexion = new MySqlConnection($"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};"))
+            if (tbUser.Text == "nouveau" && tbPassword.Text == "nouveau")
+            {
+                RegisterForm regiForm = new RegisterForm();
+                regiForm.ShowDialog();
+            }
+            else
             {
 
-                using (MySqlCommand cmd = new MySqlCommand("", connexion))
+                ChargementForm pbarform = new ChargementForm();
+                pbarform.Show();
+
+                using (connexion = new MySqlConnection($"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};"))
                 {
-                    connexion.Open();
-                    MySqlCommand SelectCommand = new MySqlCommand("SELECT * from users where Username='" + this.tbUser.Text + "' and Password='" + this.tbPassword.Text +"' ;", connexion);
-                    MySqlDataReader users;
 
-                    users = SelectCommand.ExecuteReader();
-                    int count = 0;
-                    while (users.Read())
+                    using (MySqlCommand cmd = new MySqlCommand("", connexion))
                     {
-                        count = count + 1;
-                    }
-                    if (count == 1)
-                    {
-                        PrincipaleForm pForm = new PrincipaleForm();
+                        connexion.Open();
+                        MySqlCommand SelectCommand = new MySqlCommand("SELECT * from users where Username='" + this.tbUser.Text + "' and Password=MD5('" + this.tbPassword.Text + "') ;", connexion);
+                        MySqlDataReader users;
 
-                        System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(ouvrirPrincipale));
-                        monthread.Start();
-                        this.Close();
-                    }
-                    else if (count > 1)
-                    {
-                        MessageBox.Show("Le nom d'utilisateur et le mot de passe sont dupliqués... Accès refusé. Veuillez contacter l'administrateur de la base.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vos identifiants sont incorrects, veuillez réessayer...", "Echec de l'identification", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                        connexion.Close();
-                    }
+                        users = SelectCommand.ExecuteReader();
+                        int count = 0;
+                        while (users.Read())
+                        {
+                            count = count + 1;
+                        }
+                        if (count == 1)
+                        {
+                            PrincipaleForm pForm = new PrincipaleForm();
 
+                            System.Threading.Thread monthread = new System.Threading.Thread(new System.Threading.ThreadStart(ouvrirPrincipale));
+                            monthread.Start();
+                            this.Close();
+                        }
+                        else if (count > 1)
+                        {
+                            MessageBox.Show("Le nom d'utilisateur et le mot de passe sont dupliqués... Accès refusé. Veuillez contacter l'administrateur de la base.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vos identifiants sont incorrects, veuillez réessayer...", "Echec de l'identification", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            connexion.Close();
+                        }
+
+                    }
                 }
             }
         }
