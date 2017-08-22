@@ -27,8 +27,8 @@ namespace Jotog_Manager
 
             InitializeComponent();
 
-            tlabelAlphaAvertVersion.Text = "Vous possédez une version Alpha du programme";
-            tlabelAlphaAvertVersion.ForeColor = Color.Red;
+            tlabelAlphaAvertVersion.Text = "Vous possédez une version Beta du programme";
+            tlabelAlphaAvertVersion.ForeColor = Color.Orange;
 
             BienvenueForm MyForm = new BienvenueForm();
             MyForm.TopLevel = false;
@@ -44,13 +44,12 @@ namespace Jotog_Manager
             //Vérification du statut du serveur MySQL
 
             server = "127.0.0.1";
-            port = "3306";
             database = "admin";
             uid = "root";
             passwordsql = "JotogManager-2017";
 
             string connString;
-            connString = $"SERVER={server};PORT={port};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
+            connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
 
             connexion = new MySqlConnection(connString);
 
@@ -65,6 +64,7 @@ namespace Jotog_Manager
                 toolStripStatusLabel1.Text = "Non connecté";
                 toolStripStatusLabel1.ForeColor = Color.Red;
             }
+
         }
 
         //Click sur le bouton "Projet Esthon"
