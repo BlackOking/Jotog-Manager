@@ -95,6 +95,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.5\MySql.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -108,6 +111,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AProposForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AProposForm.Designer.cs">
+      <DependentUpon>AProposForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BienvenueForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +180,12 @@
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AProposForm.resx">
+      <DependentUpon>AProposForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BienvenueForm.resx">
       <DependentUpon>BienvenueForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +218,7 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -233,6 +255,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alpagua-icon-ConvertImage.ico" />
+    <None Include="Resources\garry-normal-1.png" />
     <None Include="Resources\LuriaLogo.png" />
     <None Include="Resources\AlpaguaLogo.png" />
     <None Include="Resources\GarryLogo.png" />

@@ -29,7 +29,7 @@ namespace Alpagua_Manager
             server = "mysql-alpagua.alwaysdata.net";
             database = "alpagua_manager";
             uid = "alpagua";
-            passwordsql = "JotogManager-2017";
+            passwordsql = "Alpagua-2018";
 
             string connString;
             connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
@@ -56,7 +56,7 @@ namespace Alpagua_Manager
                     using (MySqlCommand cmd = new MySqlCommand("", connexion))
                     {
                         connexion.Open();
-                        MySqlCommand command = new MySqlCommand("INSERT INTO users(Username,Password,Name) VALUES('" + usernametBox.Text + "',MD5('" + passwordtBox.Text + "'),'" + nametBox.Text + "')", connexion);
+                        MySqlCommand command = new MySqlCommand("INSERT INTO users(pseudo,mdp,name,perm) VALUES('" + usernametBox.Text + "',MD5('" + passwordtBox.Text + "'), '" + nametBox.Text + "','1')", connexion);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Votre compte à bien été créé, veuillez maintenant vous connecter");
                         this.Close();

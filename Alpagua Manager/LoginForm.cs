@@ -20,16 +20,13 @@ namespace Jotog_Manager
         private string database;
         private string uid;
         private string passwordsql;
-
-        private string user;
-        private string mdp;
-
+        
         public LoginForm()
         {
             server = "mysql-alpagua.alwaysdata.net";
             database = "alpagua_manager";
             uid = "alpagua";
-            passwordsql = "JotogManager-2017";
+            passwordsql = "Alpagua-2018";
 
             string connString;
             connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
@@ -71,7 +68,7 @@ namespace Jotog_Manager
                     using (MySqlCommand cmd = new MySqlCommand("", connexion))
                     {
                         connexion.Open();
-                        MySqlCommand SelectCommand = new MySqlCommand("SELECT * from users where Username='" + this.tbUser.Text + "' and Password=MD5('" + this.tbPassword.Text + "') ;", connexion);
+                        MySqlCommand SelectCommand = new MySqlCommand("SELECT * from users where pseudo='" + this.tbUser.Text + "' and mdp=MD5('" + this.tbPassword.Text + "') ;", connexion);
                         MySqlDataReader users;
 
                         users = SelectCommand.ExecuteReader();
@@ -90,7 +87,7 @@ namespace Jotog_Manager
                         }
                         else if (count > 1)
                         {
-                            MessageBox.Show("Le nom d'utilisateur et le mot de passe sont dupliqués... Accès refusé. Veuillez contacter l'administrateur de la base.");
+                            MessageBox.Show("Le nom d'utilisateur et le mot de passe sont dupliqués... Accès refusé. Veuillez contacter un chef de projet.");
                         }
                         else
                         {

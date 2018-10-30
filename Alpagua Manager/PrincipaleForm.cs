@@ -40,18 +40,6 @@ namespace Jotog_Manager
             MyForm.BringToFront();
             MyForm.Show();
 
-            //Vérification du statut du serveur MySQL
-
-            server = "127.0.0.1";
-            database = "admin";
-            uid = "root";
-            passwordsql = "JotogManager-2017";
-
-            string connString;
-            connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={passwordsql};";
-
-            connexion = new MySqlConnection(connString);
-
             try
             {
                 connexion.Open();
@@ -147,5 +135,10 @@ namespace Jotog_Manager
             MyForm.Show();
         }
 
+        private void aproposButton_Click(object sender, EventArgs e)
+        {
+            AProposForm apForm = new AProposForm();
+            apForm.ShowDialog();
+        }
     }
 }
